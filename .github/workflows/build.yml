@@ -42,6 +42,7 @@ jobs:
     
     - name: Pack
       run: |
+        choco install nsis -y --no-progress
         makensis /DVERSION=${{ env.PROXINJECT_VERSION }} .\setup.nsi
       if: ${{ matrix.build_type == 'Release' }}
     
